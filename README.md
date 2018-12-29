@@ -2,7 +2,11 @@
       alt="TamGL"
       src="app/dist/img/avt.jpg"
       width="400"
-    /></p>
+    />
+    Coding by: Võ Ngọc Tâm </br>
+    Telephone: (+84)903.935.944 </br>
+    Mail: vongoctamgl1995@gmail.com
+    </p>
 
 # Cài đặt
 
