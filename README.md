@@ -1,4 +1,4 @@
-<p align="center"><img
+<p align="center" style="background-color:#80afff"><img
       alt="TamGL"
       src="app/dist/img/avt.jpg"
       width="400"
@@ -18,4 +18,4 @@ và
 
 # Chạy dự án 
 
-> npm start
+> gulp
