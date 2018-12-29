@@ -1,0 +1,31 @@
+{
+  "name": "thefirstproject",
+  "version": "1.0.0",
+  "description": "The first my website",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vongoctamGL/TheFirstProject.git"
+  },
+  "author": "TamGL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vongoctamGL/TheFirstProject/issues"
+  },
+  "homepage": "https://github.com/vongoctamGL/TheFirstProject#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.4.3",
+    "browser-sync": "^2.26.3",
+    "cssnano": "^4.1.8",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-image": "^4.4.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}
