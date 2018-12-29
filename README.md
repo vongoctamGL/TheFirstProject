@@ -1,8 +1,8 @@
 <div align="center">
         <img src="app/dist/img/avt.jpg" alt="TamGL" srcset="" width="400">
-        <p>Coding by: Võ Ngọc Tâm</p>
-        <p>Telephone:(+84)903.935.944</p>
-        <p>Mail:vongoctamgl1995@gmail.com</p>
+        <p align="left">Coding by: Võ Ngọc Tâm</br>
+        Telephone:(+84)903.935.944</br>
+        Mail:vongoctamgl1995@gmail.com</p>
     </div>
 
 # Cài đặt
