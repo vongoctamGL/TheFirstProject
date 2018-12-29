@@ -1,4 +1,4 @@
-<p align="center" style="background-color:#80afff"><img
+<p align="center" style="font-weight:bold"><img
       alt="TamGL"
       src="app/dist/img/avt.jpg"
       width="400"
