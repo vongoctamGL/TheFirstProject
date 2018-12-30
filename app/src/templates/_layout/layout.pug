@@ -1,0 +1,21 @@
+include ../_includes/variables
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        //- Chèn file CSS vào
+        include ../_includes/css
+        title Document
+    body
+        //- Chèn header website vào
+        include  ./header
+        //-Phần body của website
+        main
+            block body
+        //-Chèn footer website vào
+        include ./footer
+        //-Chèn file Javascript vào
+        include ../_includes/script
+        
