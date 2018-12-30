@@ -13,6 +13,10 @@ và
 
 > npm audit fix
 
+Bower components
+
+>bower update
+
 # Chạy dự án 
 
 > gulp
