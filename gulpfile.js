@@ -7,6 +7,7 @@ var pug = require("gulp-pug")
 var postcss = require("gulp-postcss")
 var autoprefixer = require("autoprefixer")
 var cssnano = require("cssnano")
+var concat=require('gulp-concat')
 var sourcemaps = require("gulp-sourcemaps")
 var browserSync = require("browser-sync").create()
 
@@ -58,6 +59,30 @@ gulp.task('copy-img', function () {
         ])
         .pipe(gulp.dest('app/dist/img'));
 });
+//Concat css
+gulp.task('concat-css', function () {
+    return gulp.src([
+            'bower_components/font-awesome/css/font-awesome.min.css',
+            'bower_components/animate.css/animate.min.css',
+            // OWL
+            'bower_components/owl.carousel/dist/assets/owl.carousel.min.css',
+            'bower_components/owl.carousel/dist/assets/owl.theme.default.min.css',
+        ],{ allowEmpty: true })
+        .pipe(concat('thuvien.css'))
+        .pipe(gulp.dest('./app/dist/css'));
+});
+//concat js
+gulp.task('concat-js', function () {
+    return gulp.src([
+            'bower_components/jquery/dist/jquery.slim.min.js',
+            'bower_components/popper.js/dist/umd/popper.min.js',
+            'bower_components/bootstrap/dist/js/bootstrap.min.js',
+            // Phần Plugins
+            'bower_components/owl.carousel/dist/owl.carousel.min.js',
+        ],{ allowEmpty: true })
+        .pipe(concat('thuvien.js'))
+        .pipe(gulp.dest('./app/dist/js'));
+});
 
 //Đặt các task về mặc định
-gulp.task('default', gulp.series('pug', 'sass','javascript','copy-img','browser-sync'))
+gulp.task('default', gulp.series('pug', 'sass','javascript','copy-img','concat-css','concat-js','browser-sync'))
