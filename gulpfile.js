@@ -10,6 +10,8 @@ var cssnano = require("cssnano")
 var concat=require('gulp-concat')
 var sourcemaps = require("gulp-sourcemaps")
 var browserSync = require("browser-sync").create()
+var clean=require('gulp-clean')
+var cleanCSS=require('gulp-clean-css')
 
 //Browser-sync
 gulp.task('browser-sync', function () {
@@ -62,7 +64,7 @@ gulp.task('copy-img', function () {
 //Concat css
 gulp.task('concat-css', function () {
     return gulp.src([
-            'bower_components/font-awesome/css/font-awesome.min.css',
+            'bower_components/font-awesome/css/fontawesome.min.css',
             'bower_components/animate.css/animate.min.css',
             // OWL
             'bower_components/owl.carousel/dist/assets/owl.carousel.min.css',
@@ -81,8 +83,31 @@ gulp.task('concat-js', function () {
             'bower_components/owl.carousel/dist/owl.carousel.min.js',
         ],{ allowEmpty: true })
         .pipe(concat('thuvien.js'))
-        .pipe(gulp.dest('./app/dist/js'));
+        .pipe(gulp.dest('./app/dist/scripts'));
+});
+//copy fonts
+gulp.task('copy-fonts', function () {
+    return gulp.src([
+            './app/src/fonts/**.*',
+        ])
+        .pipe(gulp.dest('./app/dist/fonts'));
+});
+//css min
+gulp.task('css-min', function () {
+    return gulp.src([
+            './app/dist/css/*.css',
+        ])
+        .pipe(cleanCSS({compatibility: 'ie8', level: {1: {specialComments: 0}}}))
+        // .pipe(rename({
+        //     suffix: '.min'
+        // }))
+        .pipe(gulp.dest('./app/dist/css'));
+});
+// Move font-awesome fonts folder to css compiled folder
+gulp.task('icons', function() {
+    return gulp.src('bower_components/font-awesome/webfonts/*.*')
+        .pipe(gulp.dest('app/src/fonts'));
 });
 
 //Đặt các task về mặc định
-gulp.task('default', gulp.series('pug', 'sass','javascript','copy-img','concat-css','concat-js','browser-sync'))
+gulp.task('default', gulp.series('pug', 'sass','javascript','copy-img','concat-css','concat-js','copy-fonts','css-min','browser-sync'))
